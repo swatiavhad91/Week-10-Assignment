@@ -1,27 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { StateMachineProvider, createStore } from "little-state-machine";
 import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Result from "./Result";
-import Openings from "./Openings"
-
-//import "./styles.css";
+import Openings from "./Openings";
 
 createStore({});
 
 function App() {
   return (
+    <React.Fragment>
+
     <StateMachineProvider>
     
 
       <Router>
         <Route exact path="/" component={Step1} />
+        
         <Route path="/openings" component={Openings} />
-        <Route path="/result" component={Result} />
+        {/* <Route path="/result" component={Result} /> */}
+         
       </Router>
     </StateMachineProvider>
+
+    </React.Fragment>
   );
 }
 

@@ -9,6 +9,7 @@ const Result = (props) => {
     <>
       <h2>Result:</h2>
       <pre>{JSON.stringify(state, null, 2)}</pre>
+      
     </>
   );
 };
