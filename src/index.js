@@ -5,6 +5,8 @@ import { StateMachineProvider, createStore } from "little-state-machine";
 import Step1 from "./Step1";
 import Openings from "./Openings";
 
+
+
 createStore({});
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
         <Route exact path="/" component={Step1} />
         
         <Route path="/openings" component={Openings} />
-        {/* <Route path="/result" component={Result} /> */}
+  
          
       </Router>
     </StateMachineProvider>

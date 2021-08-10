@@ -16,7 +16,7 @@ font-family: 'Times New Roman', Times, serif;
 {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 15%;
+  margin-top: 8%;
   
 }
 
@@ -100,3 +100,4 @@ textarea{
   border-left: none;
   border-right: none;
 }
+
