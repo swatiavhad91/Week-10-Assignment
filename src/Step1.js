@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { withRouter } from "react-router-dom";
 import { useStateMachine } from "little-state-machine";
 import updateAction from "./updateAction";
-
+import "./App.css";
 
 const Step1 = (props) => {
   
@@ -17,7 +17,7 @@ const Step1 = (props) => {
     
   };
 
-  return (
+  return  (
     <React.Fragment>
       
     <div className="form_container">
@@ -26,10 +26,12 @@ const Step1 = (props) => {
         <div className="Parent">
 
           <div className="Fname_container">
-
+            
             <input className="inputfields" placeholder="First Name *" style={{ width: "100%" }} id="firstname" required pattern="[A-Za-z]+"
               title="First Name must be character only.. It can not contain numbers or symbols.."
               {...register("FirstName")} defaultValue={state.firstName} />
+            
+            
           </div>
 
           <div className="Lname_container">
@@ -48,11 +50,11 @@ const Step1 = (props) => {
 
           <div>
 
-            <label for="gender" style={{ marginTop: "4%", color: "gray" }}>Gender</label>
+            <label htmlFor="gender" style={{ marginTop: "4%", color: "gray" }}>Gender</label>
             <div>
               <input type="radio" name="exampleRadios" id="exampleRadios1" value="male" checked
               {...register("Gender")} defaultValue={state.value} />
-              <label style={{ marginLeft: "1%" }} for="exampleRadios1">
+              <label style={{ marginLeft: "1%" }} htmlFor="exampleRadios1">
                 Male
               </label>
 
@@ -60,34 +62,34 @@ const Step1 = (props) => {
               <input type="radio" name="exampleRadios" id="exampleRadios2" value="female" 
               {...register("Gender")} defaultValue={state.value}
               style={{ marginLeft: "4%" }} />
-              <label style={{ marginLeft: "1%" }} for="exampleRadios2">
+              <label style={{ marginLeft: "1%" }} htmlFor="exampleRadios2">
                 Female
               </label>
             </div></div>
 
           <div>
-            <label style={{ marginTop: "2%", color: "gray" }} for="technology">Technology</label><br></br>
+            <label style={{ marginTop: "2%", color: "gray" }} htmlFor="technology">Technology</label><br></br>
             <input type="checkbox" id="inlineCheckbox1" value="ReactJs"
               {...register("Course")} defaultValue={state.ReactJs} style={{}} />
-            <label for="inlineCheckbox1" style={{ marginLeft: "1%" }}>ReactJs</label>
+            <label htmlFor="inlineCheckbox1" style={{ marginLeft: "1%" }}>ReactJs</label>
 
 
 
             <input type="checkbox" id="inlineCheckbox2" value="Node"
               {...register("Course")} defaultValue={state.Node} style={{ marginLeft: "3%" }} />
-            <label for="inlineCheckbox2" style={{ marginLeft: "1%" }}>Node</label>
+            <label htmlFor="inlineCheckbox2" style={{ marginLeft: "1%" }}>Node</label>
 
 
 
             <input type="checkbox" id="inlineCheckbox3" value="Angular"
               {...register("Course")} defaultValue={state.Angular} style={{ marginLeft: "3%" }} />
-            <label for="inlineCheckbox3" style={{ marginLeft: "1%" }}>Angular</label>
+            <label htmlFor="inlineCheckbox3" style={{ marginLeft: "1%" }}>Angular</label>
 
 
 
             <input type="checkbox" id="inlineCheckbox4" value="Java"
               {...register("Course")} defaultValue={state.Java} style={{ marginLeft: "3%" }} />
-            <label for="inlineCheckbox4" style={{ marginLeft: "1%" }}>Java</label>
+            <label htmlfor="inlineCheckbox4" style={{ marginLeft: "1%" }}>Java</label>
           </div>
 
 
@@ -97,10 +99,10 @@ const Step1 = (props) => {
 
           </div>
 
-          <label for="inputState" style={{ marginTop: "2%", color: "gray" }}>Select a City</label>
+          <label htmlFor="inputState" style={{ marginTop: "2%", color: "gray" }}>Select a City</label>
           <div>
             <select id="inputState" placeholder="" className="inputfields" style={{ width: "100%", color: "gray" }} >
-              <option selected  >Choose...</option>
+              <option value  >Choose...</option>
               <option value="Pune"  {...register("City")} defaultValue={state.Pune}>Pune</option>
               <option value="Mumbai" {...register("City")} defaultValue={state.Mumbai}>Mumbai</option>
               <option value="Banglore" {...register("City")} defaultValue={state.Banglore}>Banglore</option>
@@ -111,14 +113,14 @@ const Step1 = (props) => {
 
         <div className="Parent3">
           <div className="Exp">
-            <label style={{ color: "gray" }} for="expeience">Experience</label>
+            <label style={{ color: "gray" }} htmlFor="expeience">Experience</label>
             <input className="inputfields" id="experience" required pattern="^[+-]?([0-9]*[.])?[0-9]+$" title="Experience can be decimal OR floating point
             number only.. It can not character or symbols.."
               {...register("Experience")} defaultValue={state.Experience} />
           </div>
 
           <div className="DOB">
-            <label style={{ color: "gray" }} for="dob">Date of Birth</label>
+            <label style={{ color: "gray" }} htmlFor="dob">Date of Birth</label>
             <input  className="inputfields"  required  {...register("DOB")} 
             defaultValue={state.DOB} type="date" id="dob" />
 
@@ -129,11 +131,13 @@ const Step1 = (props) => {
           <input style={{ width: "20%", marginLeft: "25%", backgroundColor:"blue",color:"white",borderRadius:"4%",
           fontWeight:"bold", borderColor:"blue"}} 
           type="submit" />
+
           <input type="reset" style={{ marginLeft: "2%", width: "20%",backgroundColor:"gray",color:"white",borderRadius:"4%",
            borderColor:"gray",fontWeight:"bold" }} />
         </div>
 
       </form >
+      
     </div>
     
     

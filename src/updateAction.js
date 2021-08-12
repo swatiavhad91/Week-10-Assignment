@@ -1,5 +1,6 @@
 
 export default function updateAction(state, payload) {
+
   console.log("state:", state);
   alert("State is : \n\n"+JSON.stringify(state));
   console.log("payload:", payload);
@@ -7,8 +8,6 @@ export default function updateAction(state, payload) {
   
   return {
     ...state,
-    ...payload,
-    
+    ...payload,    
   };
-  
-}
+  }

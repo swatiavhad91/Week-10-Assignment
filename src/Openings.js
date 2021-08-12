@@ -1,13 +1,19 @@
 // react
 import { StateMachineProvider } from "little-state-machine";
 import React, { useContext, useState } from "react";
+import ReactDOM from "react-dom";
+import { Link, NavLink } from "react-router-dom";
+import { registerField } from "redux-form";
+import actions from "redux-form/lib/actions";
 import "./App.css";
+import updateAction from "./updateAction";
 
 
 export default function Openings() {
     // react Hook For State Handler
     //useContext(myContext);
     const [data, setData] = useState(null);  
+    
     
   // Fetch Function   
     fetch("./data.json").then(
@@ -23,12 +29,15 @@ export default function Openings() {
         )
 
 
-    return (
+    return  (
+        
+
         <div>
              <h1 style={{
                 backgroundColor: "blueviolet", color: "white", width: "90%", marginTop: "2%", marginLeft: "5%",
                 textAlign: "center", padding: "2%"
             }} >  Welcome {}  ! We Have Following Openings.. </h1> 
+           
 
             <div className="Openings">
                 {
@@ -61,7 +70,15 @@ export default function Openings() {
 
                 
             </div>
+            <div style={{marginTop:"10%"}}>           
+                <NavLink to="/" activeClassName="active" style={{fontSize:"largest", fontWeight:"bolder", marginLeft:"50%"}}>
+        Go Back
+      </NavLink>
         </div>
+        </div>
+ 
+        
     );
     
+
 }
